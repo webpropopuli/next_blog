@@ -1,10 +1,9 @@
-import Header from "../components/shared/Header";
+import BaseLayout from "../components/layouts/BaseLayout";
 const Index = () => {
   return (
-    <div>
-      <Header />
+    <BaseLayout>
       <h1>Hi. I'm David</h1>
-    </div>
+    </BaseLayout>
   );
 };
 

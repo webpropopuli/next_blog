@@ -1,12 +1,11 @@
 import react from "react";
-import Header from "../components/shared/Header";
+import BaseLayout from "../components/layouts/BaseLayout";
 class Resume extends react.Component {
   render() {
     return (
-      <div>
-        <Header />
+      <BaseLayout>
         <h1>Where have I been?</h1>
-      </div>
+      </BaseLayout>
     );
   }
 }

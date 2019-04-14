@@ -22,4 +22,8 @@ export default Index;
 
 ### Navigation
 
+### Components
+
+Same as pages. Start with a capital letter to differentiate from pages - not required.
+
 ## REACT Notes

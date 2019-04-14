@@ -1,10 +1,9 @@
-import Header from "../components/shared/Header";
+import BaseLayout from "../components/layouts/BaseLayout";
 const About = () => {
   return (
-    <div>
-      <Header />
+    <BaseLayout>
       <h1>David Marlowe, Software Developer</h1>
-    </div>
+    </BaseLayout>
   );
 };
 

@@ -1,12 +1,11 @@
 import react from "react";
-import Header from "../components/shared/Header";
+import BaseLayout from "../components/layouts/BaseLayout";
 class Portfolio extends react.Component {
   render() {
     return (
-      <div>
-        <Header />
+      <BaseLayout>
         <h1>What did I do?</h1>
-      </div>
+      </BaseLayout>
     );
   }
 }
