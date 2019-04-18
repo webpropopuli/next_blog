@@ -27,3 +27,8 @@ export default Index;
 Same as pages. Start with a capital letter to differentiate from pages - not required.
 
 ## REACT Notes
+
+### Lifecycle fns
+
+Constructor, render, ...DidMount....
+getInitialProps() is NextJS specific.
