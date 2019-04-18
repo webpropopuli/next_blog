@@ -31,4 +31,4 @@ Same as pages. Start with a capital letter to differentiate from pages - not req
 ### Lifecycle fns
 
 Constructor, render, ...DidMount....
-getInitialProps() is NextJS specific.
+getInitialProps() is NextJS specific. Runs on both SRV and CLI

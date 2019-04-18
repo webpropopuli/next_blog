@@ -1,5 +1,6 @@
 import react from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
+
 class Portfolio extends react.Component {
   render() {
     return (
