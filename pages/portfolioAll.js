@@ -23,7 +23,7 @@ class Portfolio extends react.Component {
     return items.map(i => {
       return (
         <li key={i.id}>
-          <Link as={`/portfolio/${i.id}`} href={`/portfolio?id=${i.id}&data=${i.body}`}>
+          <Link as={`/portfolio/${i.id}`} href={`/portfolio?id=${i.id}`}>
             <a>{i.title}</a>
           </Link>
         </li>
