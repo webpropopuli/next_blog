@@ -16,7 +16,7 @@ class Header extends React.Component {
         <Link href="/blog">
           <a> What did I say? </a>
         </Link>
-        <Link href="/portfolio">
+        <Link href="/portfolioAll">
           <a> What did I do? </a>
         </Link>
         <Link href="/about">

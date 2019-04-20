@@ -32,3 +32,9 @@ Same as pages. Start with a capital letter to differentiate from pages - not req
 
 Constructor, render, ...DidMount....
 getInitialProps() is NextJS specific. Runs on both SRV and CLI
+
+### Server side support for clean URLS
+
+Well, here it gets stupid, since I have to bring in Express to support the clean URLS. Makes me want to leave them ugly. Seems like I could map the id to the long name and that would allow the reload. But I'm new here.
+
+So now we have replace the NextJS server and drag Express in.....grrrrr

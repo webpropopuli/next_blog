@@ -1,14 +1,16 @@
-import react from "react";
+import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
+import { withRouter } from "next/router";
 
-class Portfolio extends react.Component {
+class Portfolio extends React.Component {
   render() {
     return (
       <BaseLayout>
-        <h1>What did I do?</h1>
+        <h1>{this.props.router.query.id}</h1>
+        <p>{this.props.router.query.data} </p>
       </BaseLayout>
     );
   }
 }
 
-export default Portfolio;
+export default withRouter(Portfolio);
