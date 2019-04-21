@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-//import "../../styles/style.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class Header extends React.Component {
     return (
       <div>
         <Link href="/">
-          <a className="david">home </a>
+          <a className="david"> home </a>
         </Link>
         <Link href="/blog">
           <a> What did I say? </a>
@@ -23,7 +22,7 @@ class Header extends React.Component {
           <a> What am I like? </a>
         </Link>
         <Link href="/resume">
-          <a> Where have I Been </a>
+          <a> Where have I Been? </a>
         </Link>
 
         {this.props.children}

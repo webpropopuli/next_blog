@@ -47,3 +47,11 @@ app
     const server = express();
 // I'm guessing Next is wrapping Exp as everything after this is pure Exp.
 ```
+
+# Styling, CSS and other pretty-makers
+
+Using [Reactstrap](https://reactstrap.github.io/) Basically Bootstrap 4 written in a comonent-friendly way. And since I suck at design, I'll take the assist.
+
+## \_app.js
+
+Next.js uses the App component to initialize pages. Override it to control page initialization which allows persisting layout and state between page changes and more.

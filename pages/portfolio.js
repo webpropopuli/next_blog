@@ -3,7 +3,7 @@ import BaseLayout from "../components/layouts/BaseLayout";
 import axios from "axios";
 import { withRouter } from "next/router";
 
-/* Get item id from props, then fetch and return that item. {query} is part of some odd param passed into getInitial... but I can't see what that is - though it looks mostly like path info.
+/* Get item id from props, then fetch and return that item. {query} is part of some odd param passed into getInitial... but I can't see what that is - though it looks mostly like path info. Ah...it's called 'context'. Ok then.
  */
 class Portfolio extends React.Component {
   static async getInitialProps({ query }) {

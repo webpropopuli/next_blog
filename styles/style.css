@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/static/fonts/SourceSansPro-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/static/fonts/SourceSansPro-Bold.ttf");
+  font-weight: normal;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/static/fonts/SourceSansPro-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+body {
+  font-family: "SourceSansPro", sans-serif;
+}
+
 .david {
   font-size: 24px;
   color: red;
