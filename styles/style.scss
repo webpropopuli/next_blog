@@ -1,3 +1,5 @@
+@import "./index";
+
 @font-face {
   font-family: "SourceSansPro";
   src: url("/static/fonts/SourceSansPro-Regular.ttf");
@@ -23,7 +25,9 @@ body {
   font-family: "SourceSansPro", sans-serif;
 }
 
-.david {
-  font-size: 24px;
-  color: red;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "SourceSansPro", "Helvetica";
 }

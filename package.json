@@ -1,13 +1,14 @@
 {
   "name": "davids-website",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "My portfolio and blog site",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node ./express/server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node ./express/server.js"
+    "start": "set NODE_ENV=production && node express/server.js",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [
     "nextjs",
@@ -20,15 +21,19 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
+    "babel-plugin-transform-define": "^1.3.1",
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
+    "compression": "^1.7.4",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "next": "^8.0.4",
     "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-typed": "^1.1.2",
     "reactstrap": "^8.0.0"
   },
-  "devDependencies": {
-    "optimize-css-assets-webpack-plugin": "^5.0.1"
-  }
+  "devDependencies": {}
 }
