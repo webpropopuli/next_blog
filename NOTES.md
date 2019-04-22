@@ -60,3 +60,4 @@ Next.js uses the App component to initialize pages. Override it to control page 
 
 heroku login
 heroku git:remote -a david-marlowe-website
+git push heroku master

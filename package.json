@@ -10,6 +10,9 @@
     "start": "set NODE_ENV=production && node express/server.js",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": "10.3.0"
+  },
   "keywords": [
     "nextjs",
     "portfolio",
