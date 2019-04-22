@@ -55,3 +55,8 @@ Using [Reactstrap](https://reactstrap.github.io/) Basically Bootstrap 4 written 
 ## \_app.js
 
 Next.js uses the App component to initialize pages. Override it to control page initialization which allows persisting layout and state between page changes and more.
+
+# Heroku Deploy....oh, no, not this again.....
+
+heroku login
+heroku git:remote -a david-marlowe-website
