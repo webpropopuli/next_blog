@@ -1,4 +1,4 @@
-const workItems = [
+export default const workItems = [
   [0, "Create blog posts static"],
   [0, "Move posts to Mongo and serve"],
   [0, "Fill in Portfolio items with real data"],
@@ -10,4 +10,4 @@ const workItems = [
   [0, "Fix this awful styling"]
 ];
 
-export default workItems;
+
