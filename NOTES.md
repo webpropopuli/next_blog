@@ -16,8 +16,6 @@ const Index = () => {
 export default Index;
 ```
 
-### Navigation
-
 ### Components
 
 Same as pages. Start with a capital letter to differentiate from pages - not required.
@@ -26,7 +24,6 @@ Same as pages. Start with a capital letter to differentiate from pages - not req
 
 ### Lifecycle fns
 
-Constructor, render, ...DidMount....
 getInitialProps() is NextJS specific. Runs on both SRV and CLI
 
 ### Server side support for clean URLS
@@ -63,3 +60,5 @@ heroku git:remote -a david-marlowe-website
 git push heroku master
 
 ...then random things until it finally works.
+
+#Auth0 and login

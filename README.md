@@ -4,4 +4,4 @@ It's crazy that I'm not already doing this, but I'm so sick of WordPress as that
 
 Build details are in the NOTES.md
 
-Starting code: https://github.com/Jerga99/portfolio-jerga
+Live at : https://david-marlowe-website.herokuapp.com/

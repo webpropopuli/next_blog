@@ -11,9 +11,12 @@ const workItems = [
   [0, "Move Portfolio to Mongo"],
   [1, "Deploy to live site", "22April19"],
   [0, `Make 'real' pages in menu`],
-  [0, `Style the menu as proper Nav`],
-  [1, `Make workList dynamic`],
-  [0, "Fix this awful styling"]
+  [1, `Style the menu as proper Nav`],
+  [1, `Make workList dynamic for Open/Closed`],
+  [0, "Fix this awful styling"],
+  [0, "Replace backgroung img"],
+  [0, "Make workitems pull from Git Issues"],
+  [0, "Get Auth0 working"]
 ];
 const openItems = workItems.filter(x => x[0] === 0).map(y => y[1]);
 const closedItems = workItems.filter(x => x[0] === 1).map(y => y[1]);
@@ -40,14 +43,9 @@ class Index extends React.Component {
                     <div className="back">
                       <div className="hero-section-content">
                         <h2> David Marlowe </h2>
-                        <div className="hero-section-content-intro">
-                          Writes code, drinks coffee, loves dogs.
-                        </div>
+                        <div className="hero-section-content-intro">Writes code, drinks coffee, loves dogs.</div>
                       </div>
-                      <img
-                        className="image"
-                        src="/static/images/david-and-pals.jpg"
-                      />
+                      <img className="image" src="/static/images/david-and-pals.jpg" />
                       <div className="shadow-custom">
                         <div className="shadow-inner"> </div>
                       </div>
@@ -62,14 +60,12 @@ class Index extends React.Component {
 
                 <div className="hero-welcome-bio">
                   <p>
-                    I'm a fullstack developer, former C warrior (yep, I know
-                    what a pointer is) and soon-to-be ex-website designer (I'm
-                    bad at colors).
+                    I'm a fullstack developer, former C warrior (yep, I know what a pointer is) and soon-to-be
+                    ex-website designer (I'm bad at colors).
                   </p>
                   <p>
-                    This site is React, Express and NextJS and I'm working on it
-                    daily so check back often if you're into development or just
-                    plain stalking
+                    This site is React, Express and NextJS and I'm working on it daily so check back often if you're
+                    into development or just plain stalking
                   </p>
                 </div>
               </Col>
@@ -77,13 +73,13 @@ class Index extends React.Component {
             <Row>
               <Col>
                 <div className="typed-container">
-                  <h4> What's next for this site?</h4>
+                  <h5> What's next for this site?</h5>
                   <Typed
                     loop
                     typeSpeed={40}
                     backSpeed={10}
                     strings={openItems}
-                    backDelay={1000}
+                    backDelay={1200}
                     fadeOut={true}
                     fadeOutDelay={100}
                     className="my-typed"
@@ -91,7 +87,7 @@ class Index extends React.Component {
                 </div>
               </Col>
               <div className="typed-container">
-                <h4> Recent changes</h4>
+                <h5> Recent changes</h5>
                 <Typed
                   loop
                   typeSpeed={40}
