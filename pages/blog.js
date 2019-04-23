@@ -10,7 +10,9 @@ class Blog extends react.Component {
   static async getInitialProps() {
     let posts = {};
     try {
-      const resp = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const resp = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
       posts = resp.data;
     } catch (er) {
       console.log(er);

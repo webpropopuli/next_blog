@@ -2,12 +2,19 @@ import react from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import axios from "axios";
 import Link from "next/link";
+import { Row, Col, Button, Container } from "reactstrap";
 
 class Portfolio extends react.Component {
+  constructor(props) {
+    super(props);
+  }
+
   static async getInitialProps() {
     let items = [];
     try {
-      const resp = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const resp = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
       items = resp.data;
     } catch (er) {
       console.log(er);
@@ -33,10 +40,15 @@ class Portfolio extends react.Component {
 
   render() {
     const { items } = this.props;
+    debugger;
     return (
-      <BaseLayout>
-        <h1>Some of My Projects</h1>
-        <ul>{this.renderItems(items)}</ul>
+      <BaseLayout className="cover">
+        <Container>
+          <Row>
+            <h1>Some of My Projects</h1>
+            <ul>{this.renderItems(items)}</ul>
+          </Row>
+        </Container>
       </BaseLayout>
     );
   }

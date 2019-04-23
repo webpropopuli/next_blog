@@ -22,8 +22,6 @@ debugger;
 class Index extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { title: `(home page)` };
   }
 
   render() {
@@ -42,9 +40,14 @@ class Index extends React.Component {
                     <div className="back">
                       <div className="hero-section-content">
                         <h2> David Marlowe </h2>
-                        <div className="hero-section-content-intro">Writes code, drinks coffee, loves dogs.</div>
+                        <div className="hero-section-content-intro">
+                          Writes code, drinks coffee, loves dogs.
+                        </div>
                       </div>
-                      <img className="image" src="/static/images/david-and-pals.jpg" />
+                      <img
+                        className="image"
+                        src="/static/images/david-and-pals.jpg"
+                      />
                       <div className="shadow-custom">
                         <div className="shadow-inner"> </div>
                       </div>
@@ -59,12 +62,14 @@ class Index extends React.Component {
 
                 <div className="hero-welcome-bio">
                   <p>
-                    I'm a fullstack developer, former C warrior (yep, I know what a pointer is) and soon-to-be
-                    ex-website designer (I'm bad at colors).
+                    I'm a fullstack developer, former C warrior (yep, I know
+                    what a pointer is) and soon-to-be ex-website designer (I'm
+                    bad at colors).
                   </p>
                   <p>
-                    This site is React, Express and NextJS and I'm working on it daily so check back often if you're
-                    into development or just plain stalking
+                    This site is React, Express and NextJS and I'm working on it
+                    daily so check back often if you're into development or just
+                    plain stalking
                   </p>
                 </div>
               </Col>
