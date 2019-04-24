@@ -2,29 +2,46 @@ import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import Typed, { TypedRef } from "react-typed";
 import { Row, Col, Button, Container } from "reactstrap";
+import axios from "axios";
 
-// import workItems from "../data/workItems.js";
-const workItems = [
-  [0, "Create blog posts static"],
-  [0, "Move posts to Mongo and serve"],
-  [0, "Fill in Portfolio items with real data"],
-  [0, "Move Portfolio to Mongo"],
-  [1, "Deploy to live site", "22April19"],
-  [0, `Make 'real' pages in menu`],
-  [1, `Style the menu as proper Nav`],
-  [1, `Make workList dynamic for Open/Closed`],
-  [0, "Fix this awful styling"],
-  [0, "Replace backgroung img"],
-  [0, "Make workitems pull from Git Issues"],
-  [0, "Get Auth0 working"]
-];
-const openItems = workItems.filter(x => x[0] === 0).map(y => y[1]);
-const closedItems = workItems.filter(x => x[0] === 1).map(y => y[1]);
-
-debugger;
 class Index extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      mounted: false,
+      openItems: ["{fetching data from GitHub}"],
+      closedItems: ["{we'll be right with you...}"]
+    };
+  }
+
+  componentWillMount() {
+    let workItems = [];
+    this.props.issues.forEach(i => {
+      workItems.push({
+        id: i.id,
+        number: i.number,
+        title: i.title,
+        state: i.state,
+        body: i.body
+      });
+    });
+
+    this.state.openItems = workItems.filter(x => x.state === "open").map(y => y.title);
+    this.state.closedItems = workItems.filter(x => x.state === "closed").map(y => y.title);
+  }
+
+  static async getInitialProps() {
+    let issues = [];
+    const URL = "https://api.github.com/repos/webpropopuli/next_blog/issues?state=all";
+    try {
+      const resp = await axios.get(URL, {});
+      issues = resp.data;
+    } catch (er) {
+      console.log(er);
+    }
+
+    return { issues };
   }
 
   render() {
@@ -72,34 +89,40 @@ class Index extends React.Component {
             </Row>
             <Row>
               <Col>
+                <p className="progress-hdr">Blog Progress</p>
+                <span className="git-txt">
+                  {" "}
+                  <a href="https://github.com/webpropopuli/next_blog/issues"> (live data from GitHub issues)</a>
+                </span>
+
+                <br />
                 <div className="typed-container">
-                  <h5> What's next for this site?</h5>
+                  <p className="typed-section">What's next for this site?</p>
                   <Typed
                     loop
                     typeSpeed={40}
                     backSpeed={10}
-                    strings={openItems}
-                    backDelay={1200}
+                    strings={this.state.openItems}
+                    backDelay={1400}
+                    fadeOut={true}
+                    fadeOutDelay={100}
+                    className="my-typed"
+                  />
+                </div>
+                <div className="typed-container">
+                  <p className="typed-section">Recent changes:</p>
+                  <Typed
+                    loop
+                    typeSpeed={40}
+                    backSpeed={10}
+                    strings={this.state.closedItems}
+                    backDelay={1500}
                     fadeOut={true}
                     fadeOutDelay={100}
                     className="my-typed"
                   />
                 </div>
               </Col>
-              <div className="typed-container">
-                <h5> Recent changes</h5>
-                <Typed
-                  loop
-                  typeSpeed={40}
-                  backSpeed={10}
-                  strings={closedItems}
-                  backDelay={1000}
-                  fadeOut={true}
-                  fadeOutDelay={100}
-                  className="my-typed"
-                />
-              </div>
-              <Col />
             </Row>
           </Container>
         </div>

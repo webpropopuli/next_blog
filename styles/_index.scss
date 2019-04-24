@@ -65,7 +65,7 @@
 
   .list-inline-item {
     > a {
-      color: #373737;
+      color: #474747;
     }
   }
 }
@@ -115,9 +115,33 @@
 }
 
 .typed-container {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   color: #90a0b0;
 }
+.typed-container span {
+  margin: 0;
+  padding: 0;
+}
 .my-typed {
+  margin: 0;
   font-size: 14px;
+}
+
+.progress-hdr {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  display: inline;
+}
+
+.git-txt {
+  font-size: 11px;
+  padding: 0 0 0 12px;
+  margin: 0;
+}
+
+.typed-section {
+  display: inline;
+  font-style: bold;
+  padding-right: 1em;
 }

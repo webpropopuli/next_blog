@@ -43,17 +43,17 @@ class Header extends React.Component {
               <BsNavLink route="/" title="Home" />
             </NavItem>
 
-            <NavItem className="port-navbar-item">
-              <BsNavLink route="/blog" title="'What did he say?'" />
-            </NavItem>
+            {/* <NavItem className="port-navbar-item">
+              <BsNavLink route="/blog" title="blog" />
+            </NavItem> */}
 
             <NavItem className="port-navbar-item">
-              <BsNavLink route="/portfolioAll" title="'What did he do?'" />
+              <BsNavLink route="/portfolioAll" title="portfolio" />
             </NavItem>
 
-            <NavItem className="port-navbar-item">
+            {/* <NavItem className="port-navbar-item">
               <BsNavLink route="/about" title="'Who is this guy anyway?'" />
-            </NavItem>
+            </NavItem> */}
 
             <NavItem className="port-navbar-item">
               <LoginBtn />

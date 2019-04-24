@@ -34,7 +34,7 @@ app
       console.log(`> Blog server on http://localhost:${PORT}`);
     });
   })
-  .catch(ex => {
-    console.error(ex.stack);
+  .catch(err => {
+    console.error(err.stack);
     process.exit(1);
   });

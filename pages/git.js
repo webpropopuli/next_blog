@@ -4,16 +4,18 @@ import axios from "axios";
 import Link from "next/link";
 import { Row, Col, Button, Container } from "reactstrap";
 
-class Portfolio extends react.Component {
+class Git extends react.Component {
   constructor(props) {
     super(props);
   }
 
   static async getInitialProps() {
     let items = [];
+    const URL = "https://api.github.com/repos/webpropopuli/next_blog/issues?state=all";
     try {
-      const resp = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const resp = await axios.get(URL, {});
       items = resp.data;
+      debugger;
     } catch (er) {
       console.log(er);
     }
@@ -21,14 +23,12 @@ class Portfolio extends react.Component {
     return { items: items.splice(0, 10) }; // grab first 10 only
   }
 
-  /*
-  <Link as=... gives us a clean URL (e.g. '/portfolio/3' instead of some godawful '/portfolio/this-is-stupid-long-and-hideous')
-  */
   renderItems(items) {
     return items.map(i => {
+      console.log(i.title, i.id, i.body, i.number);
       return (
-        <li key={i.id}>
-          <Link as={`/portfolio/${i.id}`} href={`/portfolio?id=${i.id}`}>
+        <li key={i.number}>
+          <Link as={`/git/${i.number}`} href={`/git?id=${i.number}`}>
             <a>{i.title}</a>
           </Link>
         </li>
@@ -41,18 +41,15 @@ class Portfolio extends react.Component {
 
     return (
       <BaseLayout className="cover">
-        <div className="main-section">
-          <Container>
-            <Row>
-              <h1>Some of My Projects</h1>
-              <h3> temp: dummy data </h3>
-              <ul>{this.renderItems(items)}</ul>
-            </Row>
-          </Container>
-        </div>
+        <Container>
+          <Row>
+            <h1>Some of My Projects</h1>
+            <ul>{this.renderItems(items)}</ul>
+          </Row>
+        </Container>
       </BaseLayout>
     );
   }
 }
 
-export default Portfolio;
+export default Git;

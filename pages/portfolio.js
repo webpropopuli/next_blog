@@ -22,10 +22,12 @@ class Portfolio extends React.Component {
     const { id, title, body } = this.props.item;
     return (
       <BaseLayout>
-        <h1>
-          {id}) {title}
-        </h1>
-        <p>{body} </p>
+        <div className="main-section">
+          <h1>
+            {id}) {title}
+          </h1>
+          <p>{body} </p>
+        </div>
       </BaseLayout>
     );
   }
