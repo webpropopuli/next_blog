@@ -15,6 +15,7 @@ class Index extends React.Component {
     };
   }
 
+  //# Loads workItems array from issues populated in ...getInitial */
   componentWillMount() {
     let workItems = [];
     this.props.issues.forEach(i => {
@@ -31,7 +32,9 @@ class Index extends React.Component {
     this.state.closedItems = workItems.filter(x => x.state === "closed").map(y => y.title);
   }
 
+  //#
   static async getInitialProps() {
+    //# grab all open GitHub items for this project
     let issues = [];
     const URL = "https://api.github.com/repos/webpropopuli/next_blog/issues?state=all";
     try {
@@ -77,13 +80,10 @@ class Index extends React.Component {
 
                 <div className="hero-welcome-bio">
                   <p>
-                    I'm a fullstack developer, former C warrior (yep, I know what a pointer is) and soon-to-be
-                    ex-website designer (I'm bad at colors).
+                    I'm a fullstack developer, former C warrior (I grok pointers) and soon-to-be ex-website designer -
+                    I'm bad at colors.
                   </p>
-                  <p>
-                    This site is React, Express and NextJS and I'm working on it daily so check back often if you're
-                    into development or just plain stalking
-                  </p>
+                  <p>This site is React, Express and NextJS and I'm working on it daily so check back often.</p>
                 </div>
               </Col>
             </Row>

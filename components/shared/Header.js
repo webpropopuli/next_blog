@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from "reactstrap";
+import Auth0 from "./../../services/auth0";
 
 const BsNavLink = props => {
   const { route, title } = props;
+  const className = props.className || "";
 
   return (
     <Link href={route}>
@@ -13,18 +15,25 @@ const BsNavLink = props => {
 };
 
 const LoginBtn = () => {
-  return <span className="nav-link port-navbar-link clickable">Enter</span>;
+  return (
+    <span onClick={Auth0.login} className="nav-link port-navbar-link clickable">
+      logIN
+    </span>
+  );
 };
 
 const LogoutBtn = () => {
-  return <span className="nav-link port-navbar-link clickable">Exit</span>;
+  return <span className="nav-link port-navbar-link clickable">logOUT</span>;
 };
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = { isOpen: false };
+    this.state = {
+      isOpen: false,
+      dropdownOpen: false
+    };
   }
 
   toggle() {
