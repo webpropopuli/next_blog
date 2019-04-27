@@ -4,6 +4,7 @@ import App, { Container } from "next/app";
 // Import all our common CSS here >
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/style.scss";
+import "../styles/globals.css";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

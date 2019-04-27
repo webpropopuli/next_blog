@@ -1,0 +1,12 @@
+/* COLORS */
+:root {
+  --main-text-color: lightgreen;
+  --subtle-text-color: #474747;
+  --typed-text-color: #90a0b0;
+
+  --bg-gradient-start: #002222;
+  --bg-gradient-end: #333333;
+  --main-background-color: rgba(0, 0, 0, 0.3);
+
+  --main-background-test: #ddd;
+}

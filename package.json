@@ -11,7 +11,7 @@
     "heroku-postbuild": "npm run build"
   },
   "engines": {
-    "node": "9.11.1",
+    "node": "10.15.3",
     "npm": "6.9.0"
   },
   "keywords": [
