@@ -37,7 +37,7 @@ class Header extends React.Component {
   }
 
   toggle() {
-    this.setState({ isOpen: !this.StaticRange.isOpen });
+    this.setState({ isOpen: !this.isOpen });
   }
   render(props) {
     return (

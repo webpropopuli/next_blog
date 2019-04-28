@@ -82,7 +82,9 @@ class Index extends React.Component {
   static async getInitialProps() {
     //# grab all open GitHub items for this project
     let issues = [];
-    const URL = `https://api.github.com/repos/webpropopuli/next_blog/issues?state=all&authorization_request=0825eed296598a76e3b8557754d6bb233708b126
+    // const URL = `https://api.github.com/repos/webpropopuli/next_blog/issues?state=all&authorization_request=0825eed296598a76e3b8557754d6bb233708b126
+    // `;
+    const URL = `https://api.github.com/repos/webpropopuli/next_blog/issues?state=all&client-id=process.env.GIT_CLIENT_ID&client_secret=fbb3e7384fcb0a38c8b25a4f55e8c36cc8385b45
     `;
     try {
       const resp = await axios.get(URL, {});
