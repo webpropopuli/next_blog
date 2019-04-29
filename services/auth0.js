@@ -92,7 +92,7 @@ class Auth0 {
   isAuthenticated() {
     // check if cookie expires.
     //TBD what is getJson result if cookie not set?
-    return new Date().getTime() < Cookies.getJson("expiresAt");
+    return new Date().getTime() < Cookies.getJSON("expiresAt");
   }
 }
 

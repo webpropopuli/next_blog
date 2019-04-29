@@ -4,45 +4,59 @@ import Typed, { TypedRef } from "react-typed";
 import { Row, Col, Button, Container } from "reactstrap";
 import axios from "axios";
 
+const myThemeList = {
+  light: {
+    "--main-text-color": "#226",
+    "--main-header-color": "white",
+    "--subtle-text-color": "#555",
+    "--main-active-color": "#EB2",
+    "--typed-text-color": "#9AB",
+    "--bg-gradient-start": "#fee",
+    "--bg-gradient-end": "#ccc"
+  },
+  dark: {
+    "--main-text-color": "lightgreen",
+    "--main-header-color": "black",
+    "--subtle-text-color": "#999",
+    "--main-active-color": "#14d",
+    "--typed-text-color": "#354",
+    "--bg-gradient-start": "#022",
+    "--bg-gradient-end": "#333"
+  }
+};
+
 class Index extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      mounted: false,
       isFlipping: false,
+      currentTheme: "dark",
       openItems: ["{fetching data from GitHub}"],
       closedItems: ["{we'll be right with you...}"]
     };
   }
 
-  changeTheme() {
-    //tbd  this should read from a theme file and iterate
+  changeTheme = () => {
+    //tbd  this should read from a theme file
 
-    const myTheme = {
-      "--main-text-color": "black",
-      "--subtle-text-color": "#b8b8b8",
-      "--typed-text-color": "#305040",
-      "--bg-gradient-start": "#ffeeee",
-      "--bg-gradient-end": "#dddddd",
-      "--main-background-color": "var(--main-background-test)"
-    };
+    const { currentTheme } = this.state;
+    let newTheme;
 
+    if (currentTheme === "dark") {
+      newTheme = "light";
+    } else {
+      newTheme = "dark";
+    }
+
+    let myTheme = myThemeList[newTheme];
     let root = document.documentElement;
-
+    debugger;
     Object.entries(myTheme).forEach(([k, v]) => {
       root.style.setProperty(k, v);
     });
-
-    // root.style.setProperty("--main-text-color", "black");
-
-    // root.style.setProperty("--subtle-text-color", "#b8b8b8");
-    // root.style.setProperty("--typed-text-color", "#305040");
-
-    // root.style.setProperty("--bg-gradient-start", "#ffeeee");
-    // root.style.setProperty("--bg-gradient-end", "#dddddd");
-    // root.style.setProperty("--main-background-color", "var(--main-background-test)");
-  }
+    this.setState({ currentTheme: newTheme });
+  };
 
   //# Card animation
   componentDidMount() {
@@ -110,22 +124,19 @@ class Index extends React.Component {
           <Container>
             <Row>
               <Col md="6">
-                <div className="hero-section">
+                <div className="left-section">
                   <div className={`flipper ${isFlipping ? "isFlipping" : ""}`}>
                     <div className="front">
-                      <div className="hero-section-content">
+                      <div className="left-section-title">
                         <h2> David Marlowe </h2>
-                        <div className="hero-section-content-intro">Writes code, drinks coffee, loves dogs.</div>
+                        <div className="left-section-text">Writes code, drinks coffee, loves dogs.</div>
                       </div>
                       <img alt="David pic" className="image" src="/static/images/david-and-pals.jpg" />
-                      <div className="shadow-custom">
-                        <div className="shadow-inner"> </div>
-                      </div>
                     </div>
                     <div className="back">
-                      <div className="hero-section-content">
+                      <div className="left-section-title">
                         <h2> David Marlowe </h2>
-                        <div className="hero-section-content-intro">Writes code, drinks coffee, loves dogs.</div>
+                        <div className="left-section-text">Writes code, drinks coffee, loves dogs.</div>
                       </div>
                       <img alt="David pic" className="image" src="/static/images/david-and-pals-rev.jpg" />
                       <div className="shadow-custom">
@@ -135,27 +146,26 @@ class Index extends React.Component {
                   </div>
                 </div>
               </Col>
-              <Col md="6" className="hero-welcome-wrapper">
-                <div className="hero-welcome-text">
+              <Col md="6">
+                <div className="right-welcome-title">
                   <h1>Hello.</h1>
                 </div>
 
-                <div className="hero-welcome-bio">
+                <div className="right-welcome-bio">
                   <p>
                     I'm a fullstack developer, former C warrior (I grok pointers) and soon-to-be ex-website designer -
                     I'm bad at colors.
                   </p>
                   <p>This site is React, Express and NextJS and I'm working on it daily so check back often.</p>
-                  <button onClick={this.changeTheme}>Change theme (test)</button>
+                  <button onClick={this.changeTheme}> Theme:{this.state.currentTheme} </button>
                 </div>
               </Col>
             </Row>
           </Container>
         </div>
-
-        <Row>
-          <Col>
-            <Container>
+        <Container style={{ marginTop: " 4%" }}>
+          <Row>
+            <Col className="git-issues-col">
               <p className="progress-hdr">
                 Blog Progress
                 <span className="git-txt">
@@ -189,9 +199,9 @@ class Index extends React.Component {
                   className="my-typed"
                 />
               </div>{" "}
-            </Container>
-          </Col>
-        </Row>
+            </Col>
+          </Row>{" "}
+        </Container>
       </BaseLayout>
     );
   }

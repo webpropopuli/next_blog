@@ -23,7 +23,11 @@ const LoginBtn = () => {
 };
 
 const LogoutBtn = () => {
-  return <span className="nav-link port-navbar-link clickable">logOUT</span>;
+  return (
+    <span onClick={Auth0.logout} className="nav-link port-navbar-link clickable">
+      logOUT
+    </span>
+  );
 };
 
 class Header extends React.Component {
@@ -51,26 +55,25 @@ class Header extends React.Component {
             <NavItem className="port-navbar-item">
               <BsNavLink route="/" title="Home" />
             </NavItem>
-
             {/* <NavItem className="port-navbar-item">
               <BsNavLink route="/blog" title="blog" />
             </NavItem> */}
-
             <NavItem className="port-navbar-item">
               <BsNavLink route="/portfolioAll" title="portfolio" />
             </NavItem>
-
             {/* <NavItem className="port-navbar-item">
               <BsNavLink route="/about" title="'Who is this guy anyway?'" />
             </NavItem> */}
-
-            <NavItem className="port-navbar-item">
-              <LoginBtn />
-            </NavItem>
-
-            <NavItem className="port-navbar-item">
-              <LogoutBtn />
-            </NavItem>
+            {!Auth0.isAuthenticated() && (
+              <NavItem className="port-navbar-item">
+                <LoginBtn />
+              </NavItem>
+            )}
+            {Auth0.isAuthenticated() && (
+              <NavItem className="port-navbar-item">
+                <LogoutBtn />
+              </NavItem>
+            )}
           </Collapse>
         </Navbar>
       </div>

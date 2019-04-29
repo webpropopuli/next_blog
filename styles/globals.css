@@ -1,12 +1,16 @@
 /* COLORS */
 :root {
   --main-text-color: lightgreen;
-  --subtle-text-color: #474747;
-  --typed-text-color: #90a0b0;
+  --main-header-color: #fff;
+  --main-active-color: #eb2;
+  --subtle-text-color: #555;
+  --typed-text-color: #9ab;
 
-  --bg-gradient-start: #002222;
-  --bg-gradient-end: #333333;
+  --bg-gradient-start: #022;
+  --bg-gradient-end: #333;
   --main-background-color: rgba(0, 0, 0, 0.3);
 
-  --main-background-test: #ddd;
+  /* below here are unchanged by theme */
+  --hero-hdr-color: white;
+  --hero-text-color: black;
 }
